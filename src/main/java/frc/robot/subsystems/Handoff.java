@@ -63,7 +63,7 @@ public class Handoff extends SubsystemBase{
         BaseStatusSignal.refreshAll(current, temp, RPS);
         SmartDashboard.putNumber("Handoff Voltage", setpointVolts);
         SmartDashboard.putNumber("Handoff Current", current.getValue().in(Amps));
-        SmartDashboard.putNumber("Handoff Temperature", temp.getValue().in(Celsius));
+        SmartDashboard.putNumber("Handoff Temperature", temp.getValueAsDouble());
         SmartDashboard.putNumber("Handoff Speed (RPS)", RPS.getValue().in(RotationsPerSecond));
     }
 }
