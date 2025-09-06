@@ -43,7 +43,7 @@ public final class Constants {
   
   public class handoffConstants {
     /* Motor Invert */
-    public static final InvertedValue handoffInvert = InvertedValue.Clockwise_Positive;
+    public static final InvertedValue handoffInvert = InvertedValue.CounterClockwise_Positive;
 
     /* Current Limits */
     public static final double statorCurrentLimit = 70;

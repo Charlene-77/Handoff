@@ -17,7 +17,7 @@ import com.ctre.phoenix6.configs.TalonFXConfiguration;
 import static edu.wpi.first.units.Units.*;
 
 
-public class Handoff extends SubsystemBase{
+public class OldHandoff extends SubsystemBase{
     private final TalonFX handoffMotor;
     private VoltageOut handoffRequest;
     private final StatusSignal<Current> current;
@@ -26,7 +26,7 @@ public class Handoff extends SubsystemBase{
     private double setpointVolts;
 
   
-    public Handoff (){
+    public OldHandoff (){
         handoffMotor = new TalonFX(Constants.canIDConstants.handoffMotor, "canivore");
         handoffMotor.setNeutralMode(NeutralModeValue.Coast); 
         handoffRequest = new VoltageOut(0).withEnableFOC(true);
