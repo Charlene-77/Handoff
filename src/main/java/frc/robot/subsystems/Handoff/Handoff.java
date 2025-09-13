@@ -27,10 +27,10 @@ public class Handoff extends SubsystemBase {
         Logger.recordOutput("HandoffState", handoffState);
         switch(handoffState){
             case IDLE:
-                handoffIO.runHandoff(0);
+                runHandoff(0);
                 break;
             case RUN:
-                handoffIO.runHandoff(10);
+                runHandoff(10);
                 break;
             default:
                 break;
@@ -48,6 +48,22 @@ public class Handoff extends SubsystemBase {
 
     public void updateInputs(HandoffIO.HandoffIOInputs inputs) {
         handoffIO.updateInputs(inputs);
+    }
+
+    public void setState(HandoffStates nextState){
+        this.handoffState = nextState;
+    }
+
+    public HandoffStates getState(){
+        return handoffState;
+    }
+
+    public void requestIdle(){
+        handoffState = handoffState.IDLE;
+    }
+
+    public void requestRun(){
+        handoffState = handoffState.RUN;
     }
 }
 
